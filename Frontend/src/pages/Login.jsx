@@ -2,6 +2,7 @@ import { useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { login } from '../services/operations/authAPI';
+import SEO from '../components/SEO';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -34,16 +35,23 @@ export default function Login() {
 
   // Google OAuth Login
   const handleGoogleLogin = () => {
-    window.location.href = `${import.meta.env.VITE_BASE_URL}/auth/google`;
+    window.location.href = "https://intervyo.onrender.com/api/auth/google";
+    // window.location.href = "http://localhost:5000/api/auth/google";
   };
 
   // GitHub OAuth Login
   const handleGitHubLogin = () => {
-    window.location.href = `${import.meta.env.VITE_BASE_URL}/auth/github`;
+    window.location.href = "https://intervyo.onrender.com/api/auth/github";
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
+      <SEO
+  title="Login – Intervyo"
+  description="Login to Intervyo and continue practicing AI-powered mock interviews."
+  url="https://intervyo.xyz/login"
+/>
+
       <div className="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-gray-800 mb-2">
